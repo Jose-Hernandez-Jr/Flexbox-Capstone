@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/078e4f7ac1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .nav-bar {
+            background-color: lightslategray;
+        }
+
+        .nav-bar div {
+            display: none;
+        }
+
+        .nav-bar .toggle, .nav-bar .brand {
+            display: inline-block;
+        }
+
+        .nav-bar .links {
+            display: block;
+            text-align: center;
+            background: black;
+            text-decoration: none;
+            padding: 1em;
+            color: white;
+        }
+
+        .nav-bar .links:hover,
+        .nav-bar .links:active {
+            color: white;
+            background: gray;
+        }
+
+        .nav-bar .brand {
+            color: black;
+            width: 8em;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+        }
+
+        .nav-bar .toggle {
+            color: white;
+            padding: 1em;
+        }
+
+        @media (min-width: 48em) {
+            .nav-bar {
+                display: flex;
+            }
+        
+
+            .nav-bar .left, .nav-bar .right {
+                display: flex;
+                flex: 1;
+            }
+
+            .nav-bar .links {
+                display: block;
+                text-align: center;
+                background: black;
+                text-decoration: none;
+                padding: 1em;
+                color: white;
+            }
+
+            .nav-bar .right {
+                justify-content: flex-end;
+            }
+
+            .nav-bar .toggle {
+                color: white;
+                padding: 1em;
+            }
+        }
+
+        @media (min-width: 48em) {
+            .nav-bar div {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .nav-bar active:toggle {
+                background: red;
+                color: white;
+            }
+            .nav-bar .brand {
+                text-align: left;
+            }
+
+            .nav-bar.active div {
+                display: block;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="#" class="toggle" id="nav-Hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <a href="#"class="brand">Jose Hernandez</a>
+        <div class="left">
+            <a href="#" class="links">link 1</a>
+            <a href="#" class="links">link 2</a>
+        </div>
+        <div class="right">
+            <a href="#" class="links">link 3</a>
+        </div>
+    </div>
+    <script>
+        const navHamburger = document.querySelector('#nav-Hamburger');
+        navHamburger.addEventListener('click', (e) => {
+            navHamburger.parentElement.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
